@@ -14,7 +14,7 @@ func main() {
 	domainFile := flag.String("df", "", "Input domain file, one domain per line")
 	wordlist := flag.String("w", "", "Wordlist file")
 	r := flag.String("r", "", "Regex to filter words from wordlist file")
-	level := flag.Int("l", 1, "Subdomain level to generate (default 1)")
+	depth := flag.Int("l", 1, "URL path depth to generate (default 1)")
 	output := flag.String("o", "", "Output file (optional)")
 	flag.Parse()
 
@@ -82,7 +82,7 @@ func main() {
 	}
 
 	results := make([]string, 0)
-	for i := 0; i < *level; i += 1 {
+	for i := 0; i < *depth; i += 1 {
 		toMerge := results[0:]
 		if len(toMerge) == 0 {
 			for word := range wordSet {
