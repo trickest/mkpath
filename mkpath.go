@@ -90,16 +90,16 @@ func main() {
 		} else {
 			for _, sd := range toMerge {
 				for word := range wordSet {
-					results = append(results, fmt.Sprintf("%s.%s", word, sd))
+					results = append(results, fmt.Sprintf("%s/%s", word, sd))
 				}
 			}
 		}
 	}
 	for _, domain := range inputDomains {
 		for _, subpath := range results {
-			fmt.Println(domain + "/" + subpath + "/")
+			fmt.Println(domain + "/" + subpath)
 			if outputFile != nil {
-				_, _ = outputFile.WriteString(domain + "/" + subpath + "/" + "\n")
+				_, _ = outputFile.WriteString(domain + "/" + subpath + "\n")
 			}
 		}
 	}
