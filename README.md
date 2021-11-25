@@ -7,19 +7,26 @@ Input from wordlist file is lowercased and unique words are processed. Additiona
 filtered using regex. 
 
 ```
-Usage of mksub:
+Usage of mkpath:
   -d string
     	Input domain
   -df string
     	Input domain file, one domain per line
   -l int
-    	Path level to generate (default 1) (default 1)
+    	Path depth to generate (default 1)
   -o string
     	Output file (optional)
   -r string
     	Regex to filter words from wordlist file
   -w string
     	Wordlist file
+  -only-dirs
+        Flag for generating directories only, files are being filtered out (default false)
+  -only-files
+        Flag for generating files only, files are being concatenated to given domains (default false)
+        
+        *If both only-dirs and only-files are set to true or false, the output will be complete,
+        meaning all possible paths will be generated, as well as those paths with all files appended*
 ```
 
 ### Example
