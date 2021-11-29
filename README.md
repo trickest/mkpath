@@ -34,24 +34,30 @@ Usage of mkpath:
 ##### wordlist.txt
 ```
 dev
-DEV
-*
-foo/bar
-prod
+prod/
+admin.py
+app/login.html
+
 ```
 ```shell script
-> go run mksub.go -d example.com -l 2 -w input.txt -r "^[a-zA-Z0-9\.-_]+$"
-example.com/dev/
-example.com/foo/bar/
-example.com/prod/
-example.com/foo/bar/dev/
-example.com/prod/dev/
-example.com/dev/dev/
-example.com/dev/foo/bar/
-example.com/foo/bar/foo/bar/
-example.com/prod/foo/bar/
-example.com/dev/prod/
-example.com/foo/bar/prod/
-example.com/prod/prod/
+> go run mkpath.go -d example.com -l 2 -w wordlist.txt
+example.com/dev
+example.com/prod
+example.com/dev/dev
+example.com/prod/dev
+example.com/dev/prod
+example.com/prod/prod
+example.com/dev/admin.py
+example.com/dev/app/login.html
+example.com/prod/admin.py
+example.com/prod/app/login.html
+example.com/dev/dev/admin.py
+example.com/dev/dev/app/login.html
+example.com/prod/dev/admin.py
+example.com/prod/dev/app/login.html
+example.com/dev/prod/admin.py
+example.com/dev/prod/app/login.html
+example.com/prod/prod/admin.py
+example.com/prod/prod/app/login.html
 
 ```
