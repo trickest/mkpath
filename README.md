@@ -21,12 +21,12 @@ Usage of mkpath:
   -w string
     	Wordlist file
   -only-dirs
-        Flag for generating directories only, files are being filtered out (default false)
+      Generate directories only, files are filtered out (default false)
   -only-files
-        Flag for generating files only, files are being concatenated to given domains (default false)
+      Generate files only, file names are appended to given domains (default false)
         
-        *If both only-dirs and only-files are set to true or false, the output will be complete,
-        meaning all possible paths will be generated, as well as those paths with all files appended*
+      *If both only-dirs and only-files are set to true or false, the output will be complete,
+      meaning all possible directory paths will be generated, as well as those paths with all file names appended*
 ```
 
 ### Example
