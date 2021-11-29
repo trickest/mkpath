@@ -20,13 +20,15 @@ Usage of mkpath:
     	Regex to filter words from wordlist file
   -w string
     	Wordlist file
+  -lower 
+        Convert wordlist file content to lowercase (default false)
   -only-dirs
-      Generate directories only, files are filtered out (default false)
+        Generate directories only, files are filtered out (default false)
   -only-files
-      Generate files only, file names are appended to given domains (default false)
+        Generate files only, file names are appended to given domains (default false)
         
-      *If both only-dirs and only-files are set to true or false, the output will be complete,
-      meaning all possible directory paths will be generated, as well as those paths with all file names appended*
+        *If both only-dirs and only-files are set to true or false, the output will be complete,
+        meaning all possible directory paths will be generated, as well as those paths with all file names appended*
 ```
 
 ### Example

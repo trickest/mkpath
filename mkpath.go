@@ -53,11 +53,12 @@ func main() {
 	domain := flag.String("d", "", "Input domain")
 	domainFile := flag.String("df", "", "Input domain file, one domain per line")
 	wordlist := flag.String("w", "", "Wordlist file")
+	toLowercase := flag.Bool("lower", false, "Convert wordlist file content to lowercase (default false)")
 	r := flag.String("r", "", "Regex to filter words from wordlist file")
 	depth := flag.Int("l", 1, "URL path depth to generate (default 1)")
 	output := flag.String("o", "", "Output file (optional)")
-	onlyDirs := flag.Bool("only-dirs", false, "Flag for generating directories only, files are being filtered out (default false)")
-	onlyFiles := flag.Bool("only-files", false, "Flag for generating files only, files are being concatenated to given domains (default false)")
+	onlyDirs := flag.Bool("only-dirs", false, "Generate directories only, files are filtered out (default false)")
+	onlyFiles := flag.Bool("only-files", false, "Generate files only, file names are appended to given domains (default false)")
 	flag.Parse()
 
 	inputDomains := make([]string, 0)
@@ -119,7 +120,10 @@ func main() {
 	scanner := bufio.NewScanner(wordlistFile)
 
 	for scanner.Scan() {
-		word := strings.ToLower(scanner.Text())
+		word := scanner.Text()
+		if *toLowercase {
+			word = strings.ToLower(word)
+		}
 		word = strings.Trim(word, "/")
 		if word != "" {
 			if reg != nil {
