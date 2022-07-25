@@ -79,7 +79,7 @@ example.com/prod/prod/app/login.html
 
 ```
 
-## Report Bugs / Feedback
+# Report Bugs / Feedback
 We look forward to any feedback you want to share with us or if you're stuck with a problem you can contact us at [support@trickest.com](mailto:support@trickest.com). You can also create an [Issue](https://github.com/trickest/mkpath/issues/new) or pull request on the Github repository.
 
 # Where does this fit in your methodology?
