@@ -1,23 +1,21 @@
-FROM golang:1.13.4-alpine3.10 AS build
+FROM golang:1.17.2-alpine AS build-env
 
-LABEL maintainer="nenad.zaric@trickest.com"
+RUN apk add git
+ADD . /go/src/mkpath
+WORKDIR /go/src/mkpath
+RUN git checkout 1fe6937 && go build -o mkpath
 
-RUN apk add --no-cache --upgrade git openssh-client ca-certificates bash
+FROM alpine:3.14
+LABEL licenses.mkpath.name="MIT" \
+      licenses.mkpath.url="https://github.com/trickest/mkpath/blob/1fe6937da4346340b514759e83a40ba231bba5e2/LICENSE" \
+      licenses.golang.name="bsd-3-clause" \
+      licenses.golang.url="https://go.dev/LICENSE?m=text"
 
-COPY . /app
+COPY --from=build-env /go/src/mkpath/mkpath /bin/mkpath
+
+RUN mkdir -p /hive/in /hive/out
 
 WORKDIR /app
-
-RUN go build -o mkpath
-
-FROM alpine:3.10
-
 RUN apk add bash
 
-RUN mkdir -p /hive/in
-
-RUN mkdir -p /hive/out
-
-COPY --from=build /app/mkpath /usr/bin/mkpath
-
-ENTRYPOINT ["mkpath"]
+ENTRYPOINT [ "mkpath" ]

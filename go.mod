@@ -1,3 +1,3 @@
-module mkpath
+module github.com/trickest/mkpath
 
-go 1.17
+go 1.18
