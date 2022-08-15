@@ -1,4 +1,4 @@
-<h1 align="center">mkpath <a href="https://twitter.com/intent/tweet?text=mkpath%20-%20Make%20URL%20path%20combinations%20using%20a%20wordlist%20https%3A%2F%2Fgithub.com%2Ftrickest%2Fmkpath&hashtags=bugbounty,bugbountytips,infosec"><img src="https://img.shields.io/badge/Tweet--lightgrey?logo=twitter&style=social" alt="Tweet" height="20"/></a></h1>
+<h1 align="center">mkpath <a href="https://twitter.com/intent/tweet?text=mkpath%20-%20Make%20URL%20path%20combinations%20using%20a%20wordlist%20%40trick3st%0Ahttps%3A%2F%2Fgithub.com%2Ftrickest%2Fmkpath&hashtags=bugbounty,bugbountytips,infosec"><img src="https://img.shields.io/badge/Tweet--lightgrey?logo=twitter&style=social" alt="Tweet" height="20"/></a></h1>
 <h3 align="center">Make URL path combinations using a wordlist</h3>
 
 ![mkpath](mkpath.png "mkpath")
