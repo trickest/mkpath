@@ -43,6 +43,8 @@ go install github.com/trickest/mkpath@latest
     	Generate files only, file names are appended to given domains (default false)
   -r string
     	Regex to filter words from wordlist file
+  -t int
+    	Number of threads for every path depth (default 100)
   -w string
     	Wordlist file
 ```
